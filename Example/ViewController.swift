@@ -27,6 +27,13 @@ class ViewController: UIViewController {
         tokenInput.placeholderText = "Enter a name"
         tokenInput.fieldName = "To:"
         tokenInput.drawBottomBorder = true
+        tokenInput.fieldView = UIButton(type: .infoDark)
+        tokenInput.accessoryView = UIButton(type: .contactAdd)
+        tokenInput.keyboardType = .asciiCapable
+        tokenInput.autocorrectionType = .no
+        tokenInput.autocapitalizationType = .none
+        
+        // playing with colors
         tokenInput.textField.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.bold)
         tokenInput.textField.textColor = .red
         tokenInput.fieldColor = self.view.tintColor

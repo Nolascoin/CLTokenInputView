@@ -80,10 +80,10 @@ Lastly, you can implement:
 
 ## Installation
 
-CLTokenInputView is available through [CocoaPods](http://cocoapods.org). To install
+CLTokenInputView is available through [Carthage](https://github.com/Carthage/Carthage). To install
 it, simply add the following line to your Podfile:
 
-    pod "CLTokenInputView"
+    github "nolascoin/CLTokenInputView"
     
 Or, you can take all the .h and .m files from `CLTokenInputView/CLTokenInputView`.
 
