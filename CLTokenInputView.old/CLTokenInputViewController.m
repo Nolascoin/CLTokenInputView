@@ -60,12 +60,6 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     if (!self.tokenInputView.editing) {
@@ -175,23 +169,29 @@
 
 - (void)onFieldInfoButtonTapped:(id)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Field View Button"
-                                                        message:@"This view is optional and can be a UIButton, etc."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Okay"
-                                              otherButtonTitles:nil];
-    [alertView show];
+    [self showMessage:@"This view is optional and can be a UIButton, etc." title:@"Field View Button"];
 }
-
 
 - (void)onAccessoryContactAddButtonTapped:(id)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Accessory View Button"
-                                                        message:@"This view is optional and can be a UIButton, etc."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Okay"
-                                              otherButtonTitles:nil];
-    [alertView show];
+    [self showMessage:@"This view is optional and can be a UIButton, etc." title:@"Accessory View Button"];
+}
+
+- (void)showMessage:(NSString *)message title: (NSString *) title {
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:title
+                                 message:message
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* okButton = [UIAlertAction
+                               actionWithTitle:@"Okay"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                                   //Handle your yes please button action here
+                               }];
+    
+    [alert addAction:okButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Demo Buttons
