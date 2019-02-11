@@ -27,9 +27,14 @@ class ViewController: UIViewController {
         tokenInput.placeholderText = "Enter a name"
         tokenInput.fieldName = "To:"
         tokenInput.drawBottomBorder = true
+        tokenInput.textField.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.bold)
+        tokenInput.textField.textColor = .red
+        tokenInput.fieldColor = self.view.tintColor
+        tokenInput.commaColor = UIColor.lightGray
+        tokenInput.tintColor = UIColor.lightGray
         
         // table
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,6 +56,7 @@ extension ViewController: UITableViewDataSource {
         let scientist = filteredScientist[indexPath.row]
         cell.textLabel?.text = scientist.name
         cell.detailTextLabel?.text = scientist.contribution
+        cell.detailTextLabel?.numberOfLines = 2
         
         if self.selectedScientists.contains(scientist) {
             cell.accessoryType = .checkmark
@@ -66,12 +72,14 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        let cell = tableView.cellForRow(at: indexPath)
         let scientist = filteredScientist[indexPath.row]
         let token = CLToken(displayText: scientist.name, context: scientist)
         
         if self.tokenInput.isEditing {
             self.tokenInput.add(token)
         }
+        cell?.accessoryType = .checkmark
     }
 }
 
@@ -101,6 +109,7 @@ extension ViewController: CLTokenInputViewDelegate {
         selectedScientists.removeAll { (scientist) -> Bool in
             return scientist.name == selectedScientist.name
         }
+        tableView.reloadData()
     }
     
     func tokenInputView(_ view: CLTokenInputView, tokenForText text: String) -> CLToken? {

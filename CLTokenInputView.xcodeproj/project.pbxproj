@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		876A92912212163000CDAB9C /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876A92902212163000CDAB9C /* SubtitleTableViewCell.swift */; };
 		876CAFE92211B754007E03DD /* ScientistsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CAFE82211B754007E03DD /* ScientistsDataSource.swift */; };
 		87805FE7221118D4007DB07B /* CLTokenInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = 87805FE5221118D4007DB07B /* CLTokenInputView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		87805FF4221119DF007DB07B /* CLBackspaceDetectingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 87805FED221119DF007DB07B /* CLBackspaceDetectingTextField.m */; };
@@ -77,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		876A92902212163000CDAB9C /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
 		876CAFE82211B754007E03DD /* ScientistsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScientistsDataSource.swift; sourceTree = "<group>"; };
 		87805FE2221118D4007DB07B /* CLTokenInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CLTokenInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87805FE5221118D4007DB07B /* CLTokenInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLTokenInputView.h; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				8780600D22111A55007DB07B /* Info.plist */,
 				8780603A22112D21007DB07B /* ViewController.swift */,
 				8780603B22112D21007DB07B /* ViewController.xib */,
+				876A92902212163000CDAB9C /* SubtitleTableViewCell.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			files = (
 				8780603C22112D21007DB07B /* ViewController.swift in Sources */,
 				876CAFE92211B754007E03DD /* ScientistsDataSource.swift in Sources */,
+				876A92912212163000CDAB9C /* SubtitleTableViewCell.swift in Sources */,
 				8780603F221133A2007DB07B /* Scientist.swift in Sources */,
 				8780600222111A54007DB07B /* AppDelegate.swift in Sources */,
 			);
