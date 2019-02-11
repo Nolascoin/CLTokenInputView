@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CLBackspaceDetectingTextField.h"
 #import "CLToken.h"
 
 #if __has_feature(objc_generics)
@@ -89,6 +90,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) IBInspectable UITextAutocorrectionType autocorrectionType;
 @property (assign, nonatomic) IBInspectable UIKeyboardAppearance keyboardAppearance;
 @property (strong, nonatomic, nullable) UIView *inputAccessoryView;
+
+@property (strong, nonatomic) CLBackspaceDetectingTextField *textField;
+@property (strong, nonatomic) UILabel *fieldLabel;
+
 /** 
  * Optional additional characters to trigger the tokenization process (and call the delegate
  * with `tokenInputView:tokenForText:`
