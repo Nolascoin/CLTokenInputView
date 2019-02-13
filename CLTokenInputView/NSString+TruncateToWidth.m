@@ -15,13 +15,15 @@
         width -= [ellipsis widthWithFont:font];
         
         // Get range for first character in string
-        NSRange range = {0, 1};
+        NSRange range = {truncatedString.length - 1, 1};
         
         // Loop, deleting characters until string fits within width
         while ([truncatedString widthWithFont:font] > width)
         {
             // Delete character at beginning
             [truncatedString deleteCharactersInRange:range];
+            // Move back another character
+            range.location--;
         }
         
         // Append ellipsis        
