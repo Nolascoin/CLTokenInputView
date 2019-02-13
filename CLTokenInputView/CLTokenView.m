@@ -13,7 +13,7 @@
 
 static CGFloat const PADDING_X = 4.0;
 static CGFloat const PADDING_Y = 2.0;
-static CGFloat const TRUNCATE_PADDING_PERCENT = 20;
+static CGFloat const TRUNCATE_PADDING_PERCENT = 25;
 static NSString *const UNSELECTED_LABEL_FORMAT = @"%@,";
 static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
 
@@ -79,6 +79,7 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
         if (fits < 1.0) {
             CGFloat widthPadding = (TRUNCATE_PADDING_PERCENT * parentSize.width) / 100.0;
             NSString *adjusted = [self.displayText stringByTruncatingToWidth:parentSize.width - widthPadding withFont:self.label.font];
+            self.displayText = adjusted;
             self.label.text = adjusted;
             self.selectedLabel.text = adjusted;
         }
