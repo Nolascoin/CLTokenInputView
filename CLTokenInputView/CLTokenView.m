@@ -39,6 +39,7 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
         self.commaColor = [UIColor lightGrayColor];
         
         UIColor *tintColor = [UIColor colorWithRed:0.0823 green:0.4941 blue:0.9843 alpha:1.0];
+        
         if ([self respondsToSelector:@selector(tintColor)]) {
             tintColor = self.tintColor;
         }
@@ -55,7 +56,9 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
         
         self.selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];
         self.selectedBackgroundView.backgroundColor = tintColor;
-        self.selectedBackgroundView.layer.cornerRadius = 3.0;
+        self.selectedBackgroundView.layer.cornerRadius = 7.0;
+        self.selectedBackgroundView.layer.borderWidth = 3;
+        self.selectedBackgroundView.layer.borderColor = tintColor.CGColor;
         [self addSubview:self.selectedBackgroundView];
         self.selectedBackgroundView.hidden = YES;
         
@@ -64,7 +67,6 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
         self.selectedLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         self.selectedLabel.font = self.label.font;
         self.selectedLabel.textColor = [UIColor whiteColor];
-        self.selectedLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:self.selectedLabel];
         self.selectedLabel.hidden = YES;
         
@@ -120,10 +122,17 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
         super.tintColor = tintColor;
     }
     self.label.textColor = tintColor;
-    self.selectedBackgroundView.backgroundColor = tintColor;
+    //self.selectedBackgroundView.backgroundColor = tintColor;
+    self.selectedBackgroundColor = tintColor;
     [self updateLabelAttributedText];
 }
 
+- (void)setSelectedBackgroundColor:(nullable UIColor *)selectedBackgroundColor {
+    if (selectedBackgroundColor != nil) {
+        self.selectedBackgroundView.layer.borderColor = selectedBackgroundColor.CGColor;
+        self.selectedBackgroundView.backgroundColor = selectedBackgroundColor;
+    }
+}
 
 #pragma mark - Hide Unselected Comma
 

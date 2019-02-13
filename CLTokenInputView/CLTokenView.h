@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL selected;
 @property (assign, nonatomic) BOOL hideUnselectedComma;
 @property (strong, nonatomic) UIColor *commaColor;
+@property (strong, nonatomic, nullable) UIColor *selectedBackgroundColor;
 
 - (id)initWithToken:(CLToken *)token font:(nullable UIFont *)font parentSize: (CGSize)parentSize;
 

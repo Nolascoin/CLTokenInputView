@@ -112,9 +112,11 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
     
     CLTokenView *tokenView = [[CLTokenView alloc] initWithToken:token font:self.textField.font parentSize:self.frame.size];
     tokenView.commaColor = self.commaColor;
+    
     if ([self respondsToSelector:@selector(tintColor)]) {
         tokenView.tintColor = self.tintColor;
     }
+    tokenView.selectedBackgroundColor = self.selectedBackgroundColor;
     tokenView.delegate = self;
     CGSize intrinsicSize = tokenView.intrinsicContentSize;
     tokenView.frame = CGRectMake(0, 0, intrinsicSize.width, intrinsicSize.height);

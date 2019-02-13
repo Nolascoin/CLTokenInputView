@@ -83,6 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) IBInspectable UIColor *fieldColor;
 @property (strong, nonatomic, nullable) UIFont *font;
 @property (strong, nonatomic, nullable) IBInspectable UIColor *commaColor;
+@property (strong, nonatomic, nullable) IBInspectable UIColor *selectedBackgroundColor;
 @property (copy, nonatomic, nullable) IBInspectable NSString *placeholderText;
 @property (strong, nonatomic, nullable) UIView *accessoryView;
 @property (assign, nonatomic) IBInspectable UIKeyboardType keyboardType;

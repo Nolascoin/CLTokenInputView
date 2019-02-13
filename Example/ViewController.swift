@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         tokenInput.fieldColor = self.view.tintColor
         tokenInput.commaColor = UIColor.lightGray
         tokenInput.tintColor = UIColor.lightGray
+        tokenInput.selectedBackgroundColor = UIColor.green
         
         // table
         tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "cell")
