@@ -28,11 +28,13 @@
 		8780602C22111B35007DB07B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8780602B22111B35007DB07B /* main.m */; };
 		8780603022111B92007DB07B /* CLTokenInputView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87805FE2221118D4007DB07B /* CLTokenInputView.framework */; };
 		8780603122111B92007DB07B /* CLTokenInputView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87805FE2221118D4007DB07B /* CLTokenInputView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8780603822111BD5007DB07B /* CLTokenInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8780603522111BD5007DB07B /* CLTokenInputViewController.m */; };
-		8780603922111BD5007DB07B /* CLTokenInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8780603722111BD5007DB07B /* CLTokenInputViewController.xib */; };
 		8780603C22112D21007DB07B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780603A22112D21007DB07B /* ViewController.swift */; };
 		8780603D22112D21007DB07B /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8780603B22112D21007DB07B /* ViewController.xib */; };
 		8780603F221133A2007DB07B /* Scientist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780603E221133A2007DB07B /* Scientist.swift */; };
+		87C14D5F2213DF5B00372273 /* NSString+TruncateToWidth.h in Headers */ = {isa = PBXBuildFile; fileRef = 87C14D5D2213DF5B00372273 /* NSString+TruncateToWidth.h */; };
+		87C14D602213DF5B00372273 /* NSString+TruncateToWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C14D5E2213DF5B00372273 /* NSString+TruncateToWidth.m */; };
+		87C14D642213E42E00372273 /* CLTokenInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C14D612213E42E00372273 /* CLTokenInputViewController.m */; };
+		87C14D652213E42E00372273 /* CLTokenInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87C14D622213E42E00372273 /* CLTokenInputViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,12 +104,14 @@
 		8780602822111B35007DB07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8780602A22111B35007DB07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8780602B22111B35007DB07B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8780603522111BD5007DB07B /* CLTokenInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLTokenInputViewController.m; path = CLTokenInputView.old/CLTokenInputViewController.m; sourceTree = SOURCE_ROOT; };
-		8780603622111BD5007DB07B /* CLTokenInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLTokenInputViewController.h; path = CLTokenInputView.old/CLTokenInputViewController.h; sourceTree = SOURCE_ROOT; };
-		8780603722111BD5007DB07B /* CLTokenInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CLTokenInputViewController.xib; path = CLTokenInputView.old/CLTokenInputViewController.xib; sourceTree = SOURCE_ROOT; };
 		8780603A22112D21007DB07B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8780603B22112D21007DB07B /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		8780603E221133A2007DB07B /* Scientist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scientist.swift; sourceTree = "<group>"; };
+		87C14D5D2213DF5B00372273 /* NSString+TruncateToWidth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+TruncateToWidth.h"; sourceTree = "<group>"; };
+		87C14D5E2213DF5B00372273 /* NSString+TruncateToWidth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+TruncateToWidth.m"; sourceTree = "<group>"; };
+		87C14D612213E42E00372273 /* CLTokenInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTokenInputViewController.m; sourceTree = "<group>"; };
+		87C14D622213E42E00372273 /* CLTokenInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLTokenInputViewController.xib; sourceTree = "<group>"; };
+		87C14D632213E42E00372273 /* CLTokenInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTokenInputViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,8 @@
 				87805FF3221119DF007DB07B /* CLTokenView.h */,
 				87805FF2221119DF007DB07B /* CLTokenView.m */,
 				87805FE6221118D4007DB07B /* Info.plist */,
+				87C14D5D2213DF5B00372273 /* NSString+TruncateToWidth.h */,
+				87C14D5E2213DF5B00372273 /* NSString+TruncateToWidth.m */,
 			);
 			path = CLTokenInputView;
 			sourceTree = "<group>";
@@ -200,9 +206,9 @@
 		8780601B22111B34007DB07B /* ExampleObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
-				8780603622111BD5007DB07B /* CLTokenInputViewController.h */,
-				8780603522111BD5007DB07B /* CLTokenInputViewController.m */,
-				8780603722111BD5007DB07B /* CLTokenInputViewController.xib */,
+				87C14D632213E42E00372273 /* CLTokenInputViewController.h */,
+				87C14D612213E42E00372273 /* CLTokenInputViewController.m */,
+				87C14D622213E42E00372273 /* CLTokenInputViewController.xib */,
 				8780601C22111B34007DB07B /* AppDelegate.h */,
 				8780601D22111B34007DB07B /* AppDelegate.m */,
 				8780602522111B35007DB07B /* Assets.xcassets */,
@@ -220,6 +226,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C14D5F2213DF5B00372273 /* NSString+TruncateToWidth.h in Headers */,
 				87805FF7221119DF007DB07B /* CLBackspaceDetectingTextField.h in Headers */,
 				87805FE7221118D4007DB07B /* CLTokenInputView.h in Headers */,
 				87805FFA221119DF007DB07B /* CLTokenView.h in Headers */,
@@ -350,7 +357,7 @@
 			files = (
 				8780602922111B35007DB07B /* LaunchScreen.storyboard in Resources */,
 				8780602622111B35007DB07B /* Assets.xcassets in Resources */,
-				8780603922111BD5007DB07B /* CLTokenInputViewController.xib in Resources */,
+				87C14D652213E42E00372273 /* CLTokenInputViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C14D602213DF5B00372273 /* NSString+TruncateToWidth.m in Sources */,
 				87805FF6221119DF007DB07B /* CLTokenInputView.m in Sources */,
 				87805FF4221119DF007DB07B /* CLBackspaceDetectingTextField.m in Sources */,
 				87805FF8221119DF007DB07B /* CLToken.m in Sources */,
@@ -385,7 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8780602C22111B35007DB07B /* main.m in Sources */,
-				8780603822111BD5007DB07B /* CLTokenInputViewController.m in Sources */,
+				87C14D642213E42E00372273 /* CLTokenInputViewController.m in Sources */,
 				8780601E22111B34007DB07B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

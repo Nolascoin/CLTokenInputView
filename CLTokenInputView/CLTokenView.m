@@ -9,10 +9,11 @@
 #import "CLTokenView.h"
 
 #import <QuartzCore/QuartzCore.h>
+#import "NSString+TruncateToWidth.h"
 
 static CGFloat const PADDING_X = 4.0;
 static CGFloat const PADDING_Y = 2.0;
-
+static CGFloat const TRUNCATE_PADDING_PERCENT = 20;
 static NSString *const UNSELECTED_LABEL_FORMAT = @"%@,";
 static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
 
@@ -31,7 +32,7 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
 
 @implementation CLTokenView
 
-- (id)initWithToken:(CLToken *)token font:(nullable UIFont *)font
+- (id)initWithToken:(CLToken *)token font:(nullable UIFont *)font parentSize: (CGSize)parentSize
 {
     self = [super initWithFrame:CGRectZero];
     if (self) {
@@ -41,43 +42,57 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
         if ([self respondsToSelector:@selector(tintColor)]) {
             tintColor = self.tintColor;
         }
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(PADDING_X, PADDING_Y, 0, 0)];
+        self.label = [[UILabel alloc] initWithFrame:CGRectMake(PADDING_X, PADDING_Y, 100, 0)];
         if (font) {
             self.label.font = font;
         }
+        
         self.label.textColor = tintColor;
+        self.label.adjustsFontSizeToFitWidth = NO;
+        self.label.lineBreakMode = NSLineBreakByTruncatingTail;
         self.label.backgroundColor = [UIColor clearColor];
         [self addSubview:self.label];
-
+        
         self.selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];
         self.selectedBackgroundView.backgroundColor = tintColor;
         self.selectedBackgroundView.layer.cornerRadius = 3.0;
         [self addSubview:self.selectedBackgroundView];
         self.selectedBackgroundView.hidden = YES;
-
-        self.selectedLabel = [[UILabel alloc] initWithFrame:CGRectMake(PADDING_X, PADDING_Y, 0, 0)];
+        
+        self.selectedLabel = [[UILabel alloc] initWithFrame:CGRectMake(PADDING_X, PADDING_Y, 100, 0)];
+        self.selectedLabel.adjustsFontSizeToFitWidth = NO;
+        self.selectedLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         self.selectedLabel.font = self.label.font;
         self.selectedLabel.textColor = [UIColor whiteColor];
         self.selectedLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:self.selectedLabel];
         self.selectedLabel.hidden = YES;
-
+        
         self.displayText = token.displayText;
-
         self.hideUnselectedComma = NO;
-
+        
         [self updateLabelAttributedText];
         self.selectedLabel.text = token.displayText;
-
+        
+        CGSize textSize = [self intrinsicContentSize];
+        CGFloat fits = textSize.width > 0 ? parentSize.width / textSize.width : 0;
+        if (fits < 1.0) {
+            CGFloat widthPadding = (TRUNCATE_PADDING_PERCENT * parentSize.width) / 100.0;
+            NSString *adjusted = [self.displayText stringByTruncatingToWidth:parentSize.width - widthPadding withFont:self.label.font];
+            self.label.text = adjusted;
+            self.selectedLabel.text = adjusted;
+        }
+        
         // Listen for taps
         UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGestureRecognizer:)];
         [self addGestureRecognizer:tapRecognizer];
-
+        
         [self setNeedsLayout];
-
     }
     return self;
 }
+
+
 
 #pragma mark - Size Measurements
 
@@ -178,7 +193,6 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
 
 - (void)updateLabelAttributedText
 {
-    NSAssert(self.commaColor != nil, @"no bueno");
     // Configure for the token, unselected shows "[displayText]," and selected is "[displayText]"
     NSString *format = UNSELECTED_LABEL_FORMAT;
     if (self.hideUnselectedComma) {

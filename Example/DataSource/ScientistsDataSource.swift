@@ -17,6 +17,7 @@ final class ScientistsDataSource {
         Scientist(name: "Michael Faraday", contribution: "His main discoveries include the principles underlying electromagnetic induction, diamagnetism and electrolysis"),
         Scientist(name: "Alam MacDiarmid", contribution: ""),
         Scientist(name: "Thomas Willson", contribution: ""),
-        Scientist(name: "Edwin Sutermeister", contribution: "")
+        Scientist(name: "Edwin Sutermeister", contribution: ""),
+        Scientist(name: "Pablo Diego José Francisco de Paula Juan Nepomuceno María de los Remedios Cipriano de la Santísima Trinidad Ruiz y Picasso", contribution: "Not a scientist")
     ]
 }
