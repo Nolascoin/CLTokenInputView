@@ -23,8 +23,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Test" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyP-Du-rUB">
+                    <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyl-61-dNa" userLabel="Token Input" customClass="CLTokenInputView">
-                    <rect key="frame" x="0.0" y="64" width="375" height="80"/>
+                    <rect key="frame" x="0.0" y="146" width="375" height="80"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="0xp-Jk-r4S"/>
@@ -44,7 +50,7 @@
                     </connections>
                 </view>
                 <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="497" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UEI-p9-nGb">
-                    <rect key="frame" x="0.0" y="194" width="375" height="473"/>
+                    <rect key="frame" x="0.0" y="259" width="375" height="408"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="PV5-9T-RsE"/>
@@ -54,13 +60,16 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eyP-Du-rUB" secondAttribute="trailing" id="3sX-II-9cW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UEI-p9-nGb" secondAttribute="bottom" id="7mL-76-O0C"/>
-                <constraint firstItem="UEI-p9-nGb" firstAttribute="top" secondItem="cyl-61-dNa" secondAttribute="bottom" constant="50" id="CeY-Ky-Ftj"/>
+                <constraint firstItem="UEI-p9-nGb" firstAttribute="top" secondItem="cyl-61-dNa" secondAttribute="bottom" constant="33" id="CeY-Ky-Ftj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UEI-p9-nGb" secondAttribute="trailing" id="I2b-vo-qIV"/>
-                <constraint firstItem="cyl-61-dNa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Nm0-nu-BIW"/>
+                <constraint firstItem="cyl-61-dNa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="146" id="Nm0-nu-BIW"/>
+                <constraint firstItem="eyP-Du-rUB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ot1-6t-Ech"/>
                 <constraint firstItem="UEI-p9-nGb" firstAttribute="top" secondItem="cyl-61-dNa" secondAttribute="bottom" constant="52" id="jce-yA-sQf"/>
                 <constraint firstItem="cyl-61-dNa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sc2-Lk-rQP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cyl-61-dNa" secondAttribute="trailing" id="xBi-Td-o4d"/>
+                <constraint firstItem="eyP-Du-rUB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xx0-0G-c5Z"/>
                 <constraint firstItem="UEI-p9-nGb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zQ0-9w-9LJ"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -70,7 +79,7 @@
                     <exclude reference="jce-yA-sQf"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="108" y="48.125937031484263"/>
+            <point key="canvasLocation" x="-439.19999999999999" y="38.23088455772114"/>
         </view>
     </objects>
 </document>

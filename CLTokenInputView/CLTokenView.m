@@ -122,7 +122,6 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
         super.tintColor = tintColor;
     }
     self.label.textColor = tintColor;
-    //self.selectedBackgroundView.backgroundColor = tintColor;
     self.selectedBackgroundColor = tintColor;
     [self updateLabelAttributedText];
 }
